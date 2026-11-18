@@ -1,0 +1,523 @@
+* {
+  margin: 0; /* Reset default margin and padding for all elements */
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Root colors */
+:root {
+  --primary: #0b1120;   /* page / header background */
+  --secondary: #00d4ff; /* highlights: spans, headings, links, hover, borders */
+  --accent: #94a3b8;    /* muted text */
+  --text: #e8eaf6;      /* main text */
+
+  /* extra shades so no color is hard-coded below */
+  --card: #101a2c;                  /* cards, footer */
+  --border: #1e293b;                /* subtle borders */
+  --glow: rgba(0, 212, 255, 0.2);   /* glow around the photo */
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--primary);
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* NAVIGATION */
+header {
+  background-color: var(--primary);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+  max-width: 1150px;
+  margin: auto;
+  padding: 20px 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 45px;
+  width: auto;
+  display: block;
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--secondary);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--secondary);
+}
+
+/* HOME SECTION */
+.home {
+  max-width: 1150px;
+  min-height: 85vh;
+  margin: auto;
+  padding: 80px 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+
+.home-content {
+  max-width: 600px;
+}
+
+.welcome {
+  color: var(--secondary);
+  font-size: 18px;
+  letter-spacing: 3px;
+  font-weight: 800;
+}
+
+.home h1 {
+  font-size: 55px;
+  margin: 15px 0 5px;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.home h1 span {
+  color: var(--secondary);
+}
+
+.home h2 {
+  color: var(--accent);
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.home-description {
+  color: var(--text);
+  margin: 20px 0 30px;
+  max-width: 500px;
+}
+
+/* HOME IMAGE PICTURE */
+.home-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-border {
+  width: 310px;
+  height: 310px;
+  padding: 10px;
+  border: 3px solid var(--secondary);
+  border-radius: 50%;
+  box-shadow: 0 0 35px var(--glow);
+}
+
+.image-border img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* ABOUT */
+.about {
+  padding: 130px 10%;
+}
+
+/* ABOUT ME HEADING */
+.about h2 {
+  text-align: center;
+  font-size: 40px;
+  color: var(--text);
+  margin-bottom: 35px;
+}
+
+.about h2 span {
+  color: var(--secondary);
+}
+
+/* EDUCATION, INTERESTS AND GOALS */
+.education,
+.interests,
+.goals {
+  padding: 25px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background-color: var(--card);
+  margin-bottom: 30px;
+}
+
+/* CENTER HEADINGS */
+.education h3,
+.interests h3,
+.goals h3 {
+  text-align: center;
+  font-size: 28px;
+  color: var(--secondary);
+}
+
+/* YEAR (first heading in education): lighter weight */
+.education h3:nth-of-type(1) {
+  font-weight: 400;
+}
+
+/* BS IN INFORMATION TECHNOLOGY (second heading): main text color */
+.education h3:nth-of-type(2) {
+  color: var(--text);
+}
+
+/* EDUCATION PARAGRAPHS */
+.paragraph {
+  text-align: center;
+  font-size: 19px;
+  color: var(--text);
+}
+
+/* INTERESTS AND GOALS SIDE BY SIDE */
+.about-bottom {
+  display: flex;
+  gap: 24px;
+}
+
+.interests,
+.goals {
+  flex: 1;
+}
+
+/* SKILLS */
+.skills {
+  padding: 130px 10%;
+}
+
+/* SKILLS HEADING */
+.skills h2 {
+  text-align: center;
+  font-size: 40px;
+  color: var(--text);
+  margin-bottom: 35px;
+}
+
+.skills h2 span {
+  color: var(--secondary);
+}
+
+/* SKILLS CONTAINER */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* INDIVIDUAL SKILL CARDS */
+.skill-card {
+  padding: 25px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background-color: var(--card);
+  text-align: center;
+}
+
+/* SKILL HEADINGS */
+.skill-card h3 {
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--secondary);
+  margin-bottom: 15px;
+}
+
+/* SKILL PARAGRAPHS */
+.skill-card p {
+  font-size: 17px;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ACHIEVEMENTS */
+.achievements {
+  padding: 130px 10%;
+}
+
+/* ACHIEVEMENTS HEADING */
+.achievements h2 {
+  text-align: center;
+  font-size: 40px;
+  color: var(--text);
+  margin-bottom: 35px;
+}
+
+.achievements p {
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 20px;
+  color: var(--accent);
+}
+
+.achievements h2 span {
+  color: var(--secondary);
+}
+
+/* ACHIEVEMENTS CONTAINER */
+.achievements-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* INDIVIDUAL ACHIEVEMENT CARDS */
+.achievement-card {
+  padding: 25px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background-color: var(--card);
+  text-align: center;
+}
+
+/* CERTIFICATE HEADINGS */
+.achievement-card h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--secondary);
+  margin-bottom: 20px;
+}
+
+/* CERTIFICATE IMAGES */
+.achievement-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+/* CONTACT */
+.contact {
+  padding: 130px 10%;
+  text-align: center;
+}
+
+/* CONTACT HEADING */
+.contact h2 {
+  font-size: 40px;
+  color: var(--text);
+  margin-bottom: 35px;
+}
+
+.contact p {
+  font-size: 19px;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+
+/* CONTACT LINKS */
+.contact a {
+  color: var(--secondary);
+  text-decoration: none;
+  overflow-wrap: anywhere; /* lets the long email wrap instead of overflowing on small screens */
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+  padding: 25px 10%;
+  background-color: var(--card);
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* FOOTER PARAGRAPH */
+footer p {
+  color: var(--accent);
+  font-size: 15px;
+}
+
+/* BACK TO TOP LINK */
+footer a {
+  color: var(--secondary);
+  text-decoration: none;
+  font-size: 15px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* ================= RESPONSIVE DESIGN (MOBILE FIXES) ================= */
+
+/* TABLET */
+@media (max-width: 900px) {
+  .home {
+    flex-direction: column-reverse; /* photo on top, text below */
+    text-align: center;
+    min-height: auto;
+    padding: 60px 30px;
+    gap: 35px;
+  }
+
+  .home-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .achievements-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about,
+  .skills,
+  .achievements,
+  .contact {
+    padding: 80px 6%;
+  }
+}
+
+/* PHONES */
+@media (max-width: 600px) {
+  .about-bottom {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 15px;
+  }
+
+  .logo {
+    height: 40px;
+    width: auto;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 18px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  .home {
+    padding: 40px 20px;
+  }
+
+  .welcome {
+    font-size: 16px;
+  }
+
+  .home h1 {
+    font-size: 34px;
+  }
+
+  .home h2 {
+    font-size: 20px;
+  }
+
+  .image-border {
+    width: 220px;
+    height: 220px;
+  }
+
+  .about h2,
+  .skills h2,
+  .achievements h2,
+  .contact h2 {
+    font-size: 30px;
+    margin-bottom: 25px;
+  }
+
+  .education h3,
+  .interests h3,
+  .goals h3 {
+    font-size: 22px;
+  }
+
+  .paragraph {
+    font-size: 16px;
+  }
+
+  .education,
+  .interests,
+  .goals,
+  .skill-card,
+  .achievement-card {
+    padding: 20px;
+  }
+
+  .contact p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .achievements-container {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
+
+  .about,
+  .skills,
+  .achievements,
+  .contact {
+    padding: 60px 5%;
+  }
+
+  .home h1 {
+    font-size: 30px;
+  }
+}
